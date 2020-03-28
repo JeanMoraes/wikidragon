@@ -1,0 +1,56 @@
+/*GOOGLE FONTS*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,900&display=swap');
+
+body{
+    display: flex;
+    justify-content: center;
+    margin:0;
+    padding: 0;
+    background-color: #F0F9F9;
+    font-family: Roboto;
+    color: #707070;
+    box-sizing: border-box;
+}
+
+h1{
+    font-weight: 900;
+    font-size: 40px;
+    margin: 5px 0;
+}
+
+p{
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #FFF;
+    border: 1px solid #F0F0F0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
+}
+
+/*Responvise*/
+@media screen and (max-width:1200px){
+    body{
+        padding: 20px;
+    }
+    
+    .container{
+        margin-top: 0px;
+    }
+}
+
+@media screen and (max-width:360px){
+    body{
+        padding: 0px;
+    }
+
+    .container{
+        padding: 0;
+    }
+}
