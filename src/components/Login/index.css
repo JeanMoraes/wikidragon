@@ -50,7 +50,7 @@
 }
 
 /*Responvise*/
-@media screen and (max-width:700px){
+@media screen and (max-width:750px){
     .box-login{
         padding: 15px;
     }
