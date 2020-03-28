@@ -26,7 +26,7 @@ function Home(){
                 <h2>Menu</h2>
                 <nav>
                     <button className="btn-nav">Todos os Dragões</button>
-                    <button className="btn-nav">Adicionar Dragão</button>
+                    <button className="btn-nav">Adicionar Dragão</button>                
                 </nav>
             </aside>
             
