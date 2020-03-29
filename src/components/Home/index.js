@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
 import Sidebar from '../Sidebar';
+import BoxDragon from '../BoxDragon';
 
 import '../global.css';
 import './index.css';
-import BoxDragon from '../BoxDragon';
 
 function Home({ history }){
     const [dragons, setDragons] = useState([]);
