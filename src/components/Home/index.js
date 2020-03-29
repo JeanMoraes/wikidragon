@@ -7,7 +7,7 @@ import BoxDragon from '../BoxDragon';
 import '../global.css';
 import './index.css';
 
-function Home({ history }){
+function Home(props, { history }){
     const [dragons, setDragons] = useState([]);
 
     useEffect(() => {
@@ -19,6 +19,7 @@ function Home({ history }){
         loadDragon();
     }, []);
 
+    //DELETE
     async function handleDeleteDragon(id){
         try{
             await api.delete(`dragon/${id}`, {
@@ -35,6 +36,13 @@ function Home({ history }){
         }
 
     };
+
+    //UPDATE
+    async function handleUpdateDragon(id){
+        alert("Editar Dragão" + id);
+    }
+
+    /////////////////////////////////////
 
     //função para ordenar os dragões
     const dragonsList = dragons.sort((a, b) => {
@@ -57,7 +65,9 @@ function Home({ history }){
                             name={dragon.name}
                             type={dragon.type}
                             histories={dragon.histories}
-                            handleDeleteDragon={() => handleDeleteDragon(dragon.id)}
+                            
+                            handleDeleteDragon ={() => handleDeleteDragon(dragon.id)}
+                            handleUpdateDragon = {() => handleUpdateDragon(dragon.id) }
                         />
                         )
                     }

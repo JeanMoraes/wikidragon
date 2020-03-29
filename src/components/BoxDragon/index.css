@@ -70,7 +70,19 @@
     cursor: pointer;
 }
 
-.box-dragon .btn-delete:hover{
+.box-dragon .btn-update{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: 0;
+    margin: 5px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.box-dragon .btn-delete:hover, .box-dragon .btn-update:hover {
     color: var(--hover-primary-color);
 }
 

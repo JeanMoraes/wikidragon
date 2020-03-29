@@ -122,6 +122,9 @@ button.form-btn:hover{
     font-size: 12px;
 }
 
+.visible{ display: flex !important; }
+.hidden{ display: none !important; }
+
 /*Responvise*/
 @media screen and (max-width:1200px){
     body{

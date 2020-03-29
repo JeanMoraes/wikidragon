@@ -7,8 +7,11 @@ import Sidebar from '../Sidebar';
 import '../global.css';
 import './index.css';
 
-function SingleDragon(props, { history }){
+function SingleDragon(props){
     const [dragon, setDragon] = useState([]);
+    const createdAt = "" + dragon.createdAt;
+    const date = createdAt.split("T");
+    const date_simple = date[0];
 
     useEffect(() => {
         async function loadDragon(){
@@ -27,7 +30,7 @@ function SingleDragon(props, { history }){
                 <h1>DETALHES DO DRAGÃO</h1>
                 <div className="box-single-dragon">
                 <h1>Nome: {dragon.name}</h1>
-                <p>Data de Criação: {dragon.createdAt}</p>
+                <p>Data de Criação: {date_simple}</p>
                 <p>Tipo do Dragão: {dragon.type}</p>
                 </div>
             </main>
