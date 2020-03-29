@@ -67,8 +67,8 @@ function Home({ history }){
                                 <p className="info">{dragon.histories}</p>
                             </section>
                             <section className="btn-actions">
-                                <button className="btn-details">Ver Detalhes</button>
-                                <button onClick={ () => handleDeleteDragon(dragon.id) }><i class="far fa-trash-alt"></i></button>
+                                <Link to={`dragon/${dragon.id}`}><button className="btn-details">Ver Detalhes</button></Link>
+                                <button onClick={ () => handleDeleteDragon(dragon.id) }><i className="far fa-trash-alt"></i></button>
                             </section>
                         </div>
                             )
