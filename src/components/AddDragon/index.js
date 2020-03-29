@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import api from '../../services/api';
+
+import Sidebar from '../Sidebar';
 
 import '../global.css';
 import './index.css';
-
-import logo from '../../assets/logo-wikidragon.png';
 
 function AddDragon(){
 
@@ -37,29 +36,22 @@ function AddDragon(){
 
         
         } catch (err){
-            setStatusMessage('Erro ao tentar cadastrar, tente novamente.');
+            alert('Erro ao tentar cadastrar o Dragão. Tente novamente.')
         }
     }
 
     return(
         <div className="container">
-            <aside>
-                <img src={logo} alt="WikiDragon" />
-
-                <h2>Menu</h2>
-                <nav>
-                    <Link to="/home"><button className="btn-nav">Todos os Dragões</button></Link>
-                    <Link to="/add-dragon"><button className="btn-nav">Adicionar Dragão</button></Link>           
-                </nav>
-            </aside>
+            
+            <Sidebar />
             
             <main>
-                <h1>LISTA DE DRAGÕES</h1>
+                <h1>ADICIONAR UM DRAGÃO</h1>
 
                 <div className="container-dragon">
                     
                     <div className="form-box">
-                    <span>{status_message}</span>
+                    <span className="success-message">{status_message}</span>
                     <form onSubmit={ handleNewDragon }>
                         <input
                             type="text"

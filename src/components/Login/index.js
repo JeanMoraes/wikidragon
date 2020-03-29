@@ -38,6 +38,7 @@ function Login({ history }){
                             placeholder="Usuário (admin)"
                             value={username}
                             onChange={e => setUsername(e.target.value)}
+                            autoComplete="off"
                         />
                         
                         <input
@@ -46,6 +47,7 @@ function Login({ history }){
                             placeholder="Senha (admin)"
                             value={password}
                             onChange={e => setPassword(e.target.value)}
+                            autoComplete="off"
                         />
                         
                         <span className="error-message">{errorMessage}</span>

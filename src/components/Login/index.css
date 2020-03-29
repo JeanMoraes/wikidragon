@@ -23,37 +23,6 @@
     flex-direction: column;
 }
 
-.form-login input{
-    display: flex;
-    max-width: 300px;
-    height: 30px;
-    padding: 5px 15px;
-    margin-top: 5px;
-    font-family: Roboto;
-    font-weight: 400;
-    border: 1px solid #CCCCCC;
-}
-
-.form-login input::placeholder{
-    color: #CCCCCC;
-}
-
-.form-login .form-btn{
-    display: flex;
-    font-size: 15px;
-    font-weight: 900;
-    padding: 10px 15px;
-    margin-top: 5px;
-    color: #FFF;
-    background-color: #FF9933;
-    border: none;
-}
-
-.error-message{
-    color: #F00;
-    font-size: 12px;
-}
-
 /*Responvise*/
 @media screen and (max-width:750px){
     .box-login{

@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
+import Sidebar from '../Sidebar';
+
 import '../global.css';
 import './index.css';
-
-import logo from '../../assets/logo-wikidragon.png';
+import BoxDragon from '../BoxDragon';
 
 function Home({ history }){
     const [dragons, setDragons] = useState([]);
@@ -43,40 +44,22 @@ function Home({ history }){
 
     return(
         <div className="container">
-            <aside>
-                <img src={logo} alt="WikiDragon" />
 
-                <h2>Menu</h2>
-                <nav>
-                    <Link to="/home"><button className="btn-nav">Todos os Dragões</button></Link>
-                    <Link to="/add-dragon"><button className="btn-nav">Adicionar Dragão</button></Link>           
-                </nav>
-            </aside>
+            <Sidebar />
             
             <main>
                 <h1>LISTA DE DRAGÕES</h1>
 
                 <div className="container-dragon">
                     {dragonsList.map(dragon => 
-                        <div key={dragon.id} className="box-dragon">
-                            <section>
-                                <p className="title">Nome do Dragão</p>
-                                <p className="info">{dragon.name}</p>
-                            </section>
-                            <section>
-                                <p className="title">Tipo</p>
-                                <p className="info">{dragon.type}</p>
-                            </section>
-                            <section>
-                                <p className="title">Descrição</p>
-                                <p className="info">{dragon.histories}</p>
-                            </section>
-                            <section className="btn-actions">
-                                <Link to={`dragon/${dragon.id}`}><button className="btn-details">Ver Detalhes</button></Link>
-                                <button onClick={ () => handleDeleteDragon(dragon.id) }><i className="far fa-trash-alt"></i></button>
-                            </section>
-                        </div>
-                            )
+                        <BoxDragon
+                            key={dragon.id}
+                            name={dragon.name}
+                            type={dragon.type}
+                            histories={dragon.histories}
+                            handleDeleteDragon={() => handleDeleteDragon(dragon.id)}
+                        />
+                        )
                     }
                 </div>
             </main>

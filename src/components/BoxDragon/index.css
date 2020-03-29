@@ -1,0 +1,89 @@
+.box-dragon{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    min-height: 250px;
+    margin-bottom: 10px;
+    background: #FFF;
+    border: 1px solid var(--dark-gray);
+
+    transition: border .2s ease;
+}
+
+.box-dragon:hover{
+    border: 1px solid var(--primary-color);
+
+    transition: border .2s ease;
+}
+
+.box-dragon section{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
+.box-dragon section .title{
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.box-dragon section .info{
+    margin: 0;
+    color: var(--dark-gray);
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.box-dragon .btn-details{
+    display: flex;
+    font-size: 12px;
+    padding: 10px 15px;
+    margin-top: 5px;
+    color: #FFF;
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+
+    transition: background-color .2s ease;
+}
+
+.box-dragon .btn-details:hover{
+    background-color: var(--hover-primary-color);
+
+    transition: background-color .2s ease;
+}
+
+.box-dragon .btn-delete{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    margin: 5px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.box-dragon .btn-delete:hover{
+    color: var(--hover-primary-color);
+}
+
+section.btn-actions {
+    flex-direction: row;
+}
+
+section.btn-actions > button {
+    margin: 5px;
+}
+
+@media screen and (max-width:620px){
+    .box-dragon{
+        width: 100%;
+    }
+}

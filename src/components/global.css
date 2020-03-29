@@ -1,5 +1,16 @@
-/*GOOGLE FONTS*/
+/*01. FONTES*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,900&display=swap');
+
+/*02. CORES*/
+:root{
+    --primary-color: #FF9933 ;
+    --hover-primary-color: #CC6600;
+    --error-color: #F00;
+    --sucess-color: #16a085;
+    --light-gray: #F9F9F9;
+    --medium-gray: #CCCCCC;
+    --dark-gray: #707070;
+}
 
 *{
     box-sizing: border-box;
@@ -10,9 +21,9 @@ body{
     justify-content: center;
     margin:0;
     padding: 0;
-    background-color: #F9F9F9;
+    background-color: var(--light-gray);
     font-family: Roboto;
-    color: #707070;
+    color: var(--dark-gray);
     box-sizing: border-box;
 }
 
@@ -31,6 +42,49 @@ p{
     font-size: 17px;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    padding:25px;
+    width: 80%;
+}
+
+input[type=text], input[type=password] {
+    display: flex;
+    max-width: 400px;
+    height: 40px;
+    padding: 5px 15px;
+    margin-top: 5px;
+    font-family: Roboto;
+    font-weight: 400;
+    border: 1px solid var(--medium-gray);
+}
+
+input::placeholder{
+    color: var(--medium-gray);
+}
+
+button.form-btn{
+    display: flex;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 10px 15px;
+    margin-top: 5px;
+    color: #FFF;
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+
+    transition: all .2s ease;
+}
+
+button.form-btn:hover{
+    background-color: var(--hover-primary-color);
+
+    transition: all .2s ease;
+    padding: 10px 20px;
+}
+
 .container{
     display: flex;
     flex-wrap: wrap;
@@ -40,21 +94,6 @@ p{
     background-color: #FFF;
     border: 1px solid #F0F0F0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.07);
-}
-
-input{
-    display: flex;
-    max-width: 300px;
-    height: 30px;
-    padding: 5px 15px;
-    margin-top: 5px;
-    font-family: Roboto;
-    font-weight: 400;
-    border: 1px solid #CCCCCC;
-}
-
-input::placeholder{
-    color: #CCCCCC;
 }
 
 .form-box{
@@ -69,12 +108,17 @@ input::placeholder{
     padding: 10px 15px;
     margin-top: 5px;
     color: #FFF;
-    background-color: #FF9933;
+    background-color: var(--primary-color);
     border: none;
 }
 
 .error-message{
-    color: #F00;
+    color: var(--error-color);
+    font-size: 12px;
+}
+
+.success-message{
+    color: var(--sucess-color);
     font-size: 12px;
 }
 
@@ -90,6 +134,22 @@ input::placeholder{
     }
 }
 
+@media screen and (max-width:750px){
+    aside{
+        width: 100%;
+        align-items: center;
+    }
+
+    aside nav{
+        flex-direction: column;
+    }
+
+    main{
+        width: 100%;
+        align-items: center;
+    }
+}
+
 @media screen and (max-width:360px){
     body{
         padding: 0px;
@@ -99,3 +159,4 @@ input::placeholder{
         padding: 0;
     }
 }
+
