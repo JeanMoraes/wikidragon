@@ -54,6 +54,7 @@ function Home({ history }){
                     {dragonsList.map(dragon => 
                         <BoxDragon
                             key={dragon.id}
+                            id={dragon.id}
                             name={dragon.name}
                             type={dragon.type}
                             histories={dragon.histories}

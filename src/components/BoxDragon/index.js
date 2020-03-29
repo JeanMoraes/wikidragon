@@ -20,7 +20,9 @@ const BoxDragon = (props) => {
                 <p className="info">{props.histories}</p>
             </section>
             <section className="btn-actions">
-                <Link to={`dragon/${props.id}`}><button className="btn-details">Ver Detalhes</button></Link>
+                <Link to={`dragon/${props.id}`}>
+                    <button className="btn-details">Ver Detalhes</button>
+                </Link>
             </section>
         </div>
     )
