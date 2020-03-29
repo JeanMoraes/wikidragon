@@ -78,6 +78,14 @@ main{
     border: none;
 }
 
+section.btn-actions {
+    flex-direction: row;
+}
+
+section.btn-actions > button {
+    margin: 5px;
+}
+
 
 /*Responsive*/
 @media screen and (max-width:750px){

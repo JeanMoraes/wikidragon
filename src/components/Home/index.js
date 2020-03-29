@@ -19,6 +19,23 @@ function Home({ history }){
         loadDragon();
     }, []);
 
+    async function handleDeleteDragon(id){
+        try{
+            await api.delete(`dragon/${id}`, {
+                headers:{
+                    "Content-Type":"application/json",
+                }
+            });
+
+            setDragons(dragons.filter(dragon => dragon.id !== id ));
+            alert('Dragão deletado com sucesso!');
+
+        } catch (err){
+            alert('Erro ao tentar deletar esse dragão!')
+        }
+
+    };
+
     return(
         <div className="container">
             <aside>
@@ -49,8 +66,9 @@ function Home({ history }){
                                 <p className="title">Descrição</p>
                                 <p className="info">{dragon.histories}</p>
                             </section>
-                            <section>
+                            <section className="btn-actions">
                                 <button className="btn-details">Ver Detalhes</button>
+                                <button onClick={ () => handleDeleteDragon(dragon.id) }><i class="far fa-trash-alt"></i></button>
                             </section>
                         </div>
                             )
