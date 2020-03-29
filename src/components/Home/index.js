@@ -36,6 +36,11 @@ function Home({ history }){
 
     };
 
+    //função para ordenar os dragões
+    const dragonsList = dragons.sort((a, b) => {
+        return a.name.localeCompare(b.name)
+    });
+
     return(
         <div className="container">
             <aside>
@@ -52,7 +57,7 @@ function Home({ history }){
                 <h1>LISTA DE DRAGÕES</h1>
 
                 <div className="container-dragon">
-                    {dragons.map(dragon => 
+                    {dragonsList.map(dragon => 
                         <div key={dragon.id} className="box-dragon">
                             <section>
                                 <p className="title">Nome do Dragão</p>
